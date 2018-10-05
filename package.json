@@ -1,0 +1,27 @@
+{
+  "name": "@cuties/scripts",
+  "version": "1.0.0",
+  "description": "Cutie extension for execution all js scripts in a directory or directories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guseyn/cutie-scripts.git"
+  },
+  "keywords": [
+    "cutie",
+    "scripts",
+    "execution"
+  ],
+  "author": "guseyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guseyn/cutie-scripts/issues"
+  },
+  "homepage": "https://github.com/Guseyn/cutie-scripts#readme",
+  "dependencies": {
+    "@cuties/cutie": "^1.4.4"
+  }
+}
