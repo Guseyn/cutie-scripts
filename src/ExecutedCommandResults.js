@@ -21,7 +21,7 @@ class ExecutedCommandResults extends AsyncObject {
       if (failNumber !== 0) {
         console.log('\x1b[31m%s\x1b[0m', `${failNumber} script(s) ha(s|ve) failed`);
       }
-      executedTime.log('execution time: %d ms');
+      executedTime.log('execution time: %d ms\n');
       return results;
     }
   }
