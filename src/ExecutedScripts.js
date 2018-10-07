@@ -5,11 +5,11 @@ const ReadFilesOfDirectories = require('./ReadFilesOfDirectories');
 const NodeCommandLines = require('./NodeCommandLines');
 const ExecutedCommands = require('./ExecutedCommands');
 
-module.exports = function (...dirs) {
+module.exports = function (...files) {
   let filesFromDirs = [];
-  dirs.forEach(dir => {
+  files.forEach(file => {
     filesFromDirs.push(
-      new ReadFilesOfDirectoryRecursively(dir)
+      new ReadFilesOfDirectoryRecursively(file)
     );
   });
   return new ExecutedCommands(

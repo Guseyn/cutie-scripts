@@ -1,5 +1,5 @@
 # cutie-scripts
-Cutie extension for execution all js scripts in a directory or directories.
+Cutie extension for execution all js scripts in a directory or directories. Also it's possible just to specify concrete scripts.
 
 [![NPM Version][npm-image]][npm-url]
 
@@ -10,7 +10,7 @@ const {
   ExecutedScripts
 } = require('@cuties/scripts');
 
-new ExecutedScripts('./test/dir1', './test/dir2').call();
+new ExecutedScripts('./test/dir1', './test/dir2', './test/test000.js').call();
 
 ```
 
