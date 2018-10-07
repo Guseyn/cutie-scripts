@@ -2,4 +2,4 @@ const {
   ExecutedScripts
 } = require('./index');
 
-new ExecutedScripts('./test/dir1', './test/dir2').call();
+new ExecutedScripts('./test/dir1', './test/dir2', './test/test000.js').call();
