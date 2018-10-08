@@ -1,6 +1,7 @@
 'use strict'
 
 const AsyncObject = require('@cuties/cutie').AsyncObject;
+const logLine = require('./logLine');
 
 class ExecutedCommandResults extends AsyncObject {
 
@@ -14,14 +15,16 @@ class ExecutedCommandResults extends AsyncObject {
         return result === 1
       }).length;
       let failNumber = results.length - successNumber;
-      console.log('\n');
+      logLine();
       if (successNumber !== 0) {
         console.log('\x1b[32m%s\x1b[0m', `${successNumber} script(s) ha(s|ve) executed successfully`);
       }
       if (failNumber !== 0) {
         console.log('\x1b[31m%s\x1b[0m', `${failNumber} script(s) ha(s|ve) failed`);
       }
-      executedTime.log('execution time: %d ms\n');
+      logLine();
+      executedTime.log('execution time: %d ms');
+      logLine();
       return results;
     }
   }
