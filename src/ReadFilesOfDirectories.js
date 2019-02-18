@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is file[]
 class ReadFilesOfDirectories extends AsyncObject {
-
-  constructor(...filesFromDirs) {
-    super(...filesFromDirs);
+  constructor (...filesFromDirs) {
+    super(...filesFromDirs)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (...filesFromDirs) => {
-      let files = [].concat(...filesFromDirs);
-      return files;
+      let files = [].concat(...filesFromDirs)
+      return files
     }
   }
-
 }
 
-module.exports = ReadFilesOfDirectories;
+module.exports = ReadFilesOfDirectories

@@ -1,27 +1,25 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
-const path = require('path');
+const AsyncObject = require('@cuties/cutie').AsyncObject
+const path = require('path')
 
 // Represend result is string[]
 class CommandLines extends AsyncObject {
-
-  constructor(command, format, files) {
-    super(command, format, files);
+  constructor (command, format, files) {
+    super(command, format, files)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (command, format, files) => {
-      let commandLines = [];
+      let commandLines = []
       files.forEach(file => {
         if (path.extname(file).split('.')[1] === format) {
-          commandLines.push(`${command} ${file}`);
+          commandLines.push(`${command} ${file}`)
         }
-      });
-      return commandLines;
+      })
+      return commandLines
     }
   }
-
 }
 
-module.exports = CommandLines;
+module.exports = CommandLines
