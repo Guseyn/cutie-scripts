@@ -1,6 +1,6 @@
 {
   "name": "@cuties/scripts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Cutie extension for execution all js scripts in a directory or directories.",
   "main": "index.js",
   "scripts": {
