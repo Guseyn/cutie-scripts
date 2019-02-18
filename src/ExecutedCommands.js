@@ -8,19 +8,19 @@ const ExecutionTime = require('./ExecutionTime');
 // Respresend result is nodeCommandLines
 class ExecutedCommands extends AsyncObject {
 
-  constructor(nodeCommandLines) {
-    super(nodeCommandLines);
+  constructor(commandLines) {
+    super(commandLines);
   }
 
   definedSyncCall() {
-    return (nodeCommandLines) => {
+    return (commandLines) => {
       let commands = [];
       let executionTime = new ExecutionTime();
-      nodeCommandLines.forEach(commandLine => {
+      commandLines.forEach(commandLine => {
         commands.push(new ExecutedCommandResult(commandLine, executionTime));
       });
       new ExecutedCommandResults(executionTime, ...commands).call();
-      return nodeCommandLines;
+      return commandLines;
     }
   }
 
