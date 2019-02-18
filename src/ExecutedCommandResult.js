@@ -6,21 +6,21 @@ const { exec } = require('child_process');
 // Represented result is number
 class ExecutedCommandResult extends AsyncObject {
 
-  constructor(nodeCommandLine, executedTime) {
-    super(nodeCommandLine, executedTime);
+  constructor(commandLine, executedTime) {
+    super(commandLine, executedTime);
   }
 
   definedAsyncCall() {
-    return (nodeCommandLine, executedTime, callback) => {
-      this.nodeCommandLine = nodeCommandLine;
+    return (commandLine, executedTime, callback) => {
+      this.commandLine = commandLine;
       this.executedTime = executedTime;
-      exec(nodeCommandLine, callback);
+      exec(commandLine, callback);
     }
   }
 
   onErrorAndResult(error, stdout, stderr) {
     let result = 1;
-    let path = this.nodeCommandLine.split('node ')[1]; 
+    let path = this.commandLine.split(' ')[1]; 
     this.executedTime.update();
     if (!stderr) {
       console.log('\x1b[32m%s\x1b[0m', `${path} has executed successfully...`);
@@ -32,7 +32,7 @@ class ExecutedCommandResult extends AsyncObject {
     if (stdout.length !== 0) {
       console.log(stdout);
     }
-    if (!error.isNull) {
+    if (error !== null) {
       result = 0;
       console.log('\x1b[31m%s\x1b[0m', `${path} has failed...`);
       console.log('\x1b[31m%s\x1b[0m', error);
