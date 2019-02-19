@@ -1,5 +1,9 @@
-const {
-  ExecutedScripts
-} = require('./index');
+const { ExecutedScripts } = require('./index')
 
-new ExecutedScripts('./test/dir1', './test/dir2', './test/test000.js').call();
+new ExecutedScripts(
+  'node', 'js', './example/test/dir2'
+).after(
+  new ExecutedScripts(
+    'node', 'js', './example/test/dir1', './example/test/test.js'
+  )
+).call() // or just new ExecutedTests('./example/test').call()
