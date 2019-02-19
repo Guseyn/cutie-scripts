@@ -5,21 +5,20 @@ const ExecutedCommandResult = require('./ExecutedCommandResult')
 const ExecutedCommandResults = require('./ExecutedCommandResults')
 const ExecutionTime = require('./ExecutionTime')
 
-
-class CallbackForExecutedCommands extends AsyncObject {
-  constructor (callback, executedCommands) {
-    super(callback, executedCommands)
+class CallbackForExecutedCommandResults extends AsyncObject {
+  constructor (callback, executedCommandResults) {
+    super(callback, executedCommandResults)
   }
 
   definedSyncCall () {
-    return (callback, executedCommands) => {
-      callback(executedCommands)
+    return (callback, executedCommandResults) => {
+      callback(executedCommandResults)
       return callback
     }
   }
 }
 
-// Respresend result is nodeCommandLines
+// Respresend result is array (status results)
 class ExecutedCommands extends AsyncObject {
   constructor (commandLines) {
     super(commandLines)
@@ -32,7 +31,7 @@ class ExecutedCommands extends AsyncObject {
       commandLines.forEach(commandLine => {
         commands.push(new ExecutedCommandResult(commandLine, executionTime))
       })
-      new CallbackForExecutedCommands(
+      new CallbackForExecutedCommandResults(
         callback,
         new ExecutedCommandResults(executionTime, ...commands)
       ).call()
