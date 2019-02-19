@@ -6,5 +6,5 @@ const ExecutionTime = require('./../src/ExecutionTime')
 
 new DeepStrictEqualAssertion(
   new ExecutedCommands(['node ./example/test/test'], new ExecutionTime()),
-  ['node ./example/test/test']
+  [ 1 ]
 ).call()
