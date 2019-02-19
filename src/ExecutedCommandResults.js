@@ -18,6 +18,8 @@ class ExecutedCommandResults extends AsyncObject {
       }
       if (failNumber !== 0) {
         console.log('\x1b[31m%s\x1b[0m', `${failNumber} script(s) ha(s|ve) failed`)
+        console.log('\x1b[31m%s\x1b[0m', 'Process exited with code 1')
+        process.exit(1)
       }
       executedTime.log('execution time: %d ms')
       return results
