@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node test-executor",
     "build": "node build",
-    "example": "node example/example"
+    "example": "node example"
   },
   "repository": {
     "type": "git",
