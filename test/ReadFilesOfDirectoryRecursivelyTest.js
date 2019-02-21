@@ -15,7 +15,7 @@ class SortedFiles extends AsyncObject {
     super(files)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (files) => {
       files = files.sort((file1, file2) => {
         return file1 <= file2 ? -1 : 1

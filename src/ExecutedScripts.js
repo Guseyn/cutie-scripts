@@ -11,7 +11,7 @@ class ExitOnFail extends AsyncObject {
     super(results)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (results) => {
       if (results.indexOf(0) !== -1) {
         console.log('\x1b[31m%s\x1b[0m', 'Process exited with code 1')

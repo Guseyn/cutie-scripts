@@ -7,7 +7,7 @@ class ExecutedCommandResults extends AsyncObject {
     super(executedTime, ...results)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (executedTime, ...results) => {
       let successNumber = results.filter(result => {
         return result === 1

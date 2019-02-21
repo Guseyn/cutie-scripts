@@ -9,7 +9,7 @@ class ReadFilesOfDirectoryRecursively extends AsyncObject {
     super(dir, options || 'utf8')
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return readFilesOfDirectoryRecursively
   }
 }

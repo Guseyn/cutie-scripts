@@ -9,7 +9,7 @@ class CommandLines extends AsyncObject {
     super(command, format, files)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (command, format, files) => {
       let commandLines = []
       files.forEach(file => {
