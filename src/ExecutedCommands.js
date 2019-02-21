@@ -10,7 +10,7 @@ class CallbackForExecutedCommandResults extends AsyncObject {
     super(callback, executedCommandResults)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (callback, executedCommandResults) => {
       callback(executedCommandResults)
       return callback
@@ -24,7 +24,7 @@ class ExecutedCommands extends AsyncObject {
     super(commandLines)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (commandLines, callback) => {
       let commands = []
       let executionTime = new ExecutionTime()

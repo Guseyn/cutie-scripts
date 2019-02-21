@@ -9,7 +9,7 @@ class ExecutedCommandResult extends AsyncObject {
     super(commandLine, executedTime)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (commandLine, executedTime, callback) => {
       this.commandLine = commandLine
       this.executedTime = executedTime

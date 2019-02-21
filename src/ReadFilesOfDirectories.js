@@ -8,7 +8,7 @@ class ReadFilesOfDirectories extends AsyncObject {
     super(...filesFromDirs)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (...filesFromDirs) => {
       let files = [].concat(...filesFromDirs)
       return files
