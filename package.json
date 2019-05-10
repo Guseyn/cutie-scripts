@@ -4,7 +4,7 @@
   "description": "Cutie extension for execution all js scripts in a directory or directories.",
   "main": "index.js",
   "scripts": {
-    "test": "node test-executor",
+    "test": "node test",
     "build": "node build",
     "example": "node example"
   },
@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/Guseyn/cutie-scripts#readme",
   "dependencies": {
-    "@cuties/assert": "^1.2.0",
-    "@cuties/cutie": "^1.7.0",
-    "@cuties/wall": "^1.1.0",
-    "test-executor": "^1.2.0"
+    "@cuties/assert": "^1.2.2",
+    "@cuties/cutie": "^1.7.5",
+    "@cuties/wall": "^1.1.2",
+    "test-executor": "^1.2.4"
   },
   "devDependencies": {
     "eslint": "^5.13.0",
@@ -36,6 +36,6 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "nyc": "^13.3.0"
+    "nyc": "^14.1.1"
   }
 }
